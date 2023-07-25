@@ -17,6 +17,6 @@ l'app riceve in input una foto e restitiusce un link con articoli simili alla qu
     * salviamo i tags su un file txt
     * estriamo dal file il prodotto (prodotto + filtro, esempio yellow shirt)
 
-  * Restitiure un link Zalando con alcuni prodotti similli: file python Response
+  * Restitiure un link Zalando con prodotti similli: file python Response
     * ci colleggiamo a zalando
     * stampiamo prodotti simili (non stampa tutti i prodotti della pagina: motivo --> blocco Webscraping)
