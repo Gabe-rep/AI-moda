@@ -9,11 +9,11 @@ l'app riceve in input una foto e restitiusce un link con articoli simili alla qu
   * visual studio
 
 ## Step Demo 
-  * Analisi dell'imagine : file python chiamato imageAnalisi
+  * Analisi dell'imagine : file python imageAnalisi
     * ci collegiamo a Vision Visual
     * facciamo l'estrazione dei tags della foto con Dense Caption
 
-  * Estrazione del prodotto : file python chiamto Product
+  * Estrazione del prodotto : file python Product
     * salviamo i tags su un file txt
     * estriamo dal file il prodotto (prodotto + filtro, esempio yellow shirt)
 
