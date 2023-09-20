@@ -19,4 +19,5 @@ l'app riceve in input una foto e restitiusce un link con articoli simili alla qu
 
   * Restitiure un link Zalando con prodotti similli: file python Response
     * ci colleggiamo a zalando
-    * stampiamo prodotti simili (non stampa tutti i prodotti della pagina: motivo --> blocco Webscraping)
+    * stampiamo prodotti simili
+      
