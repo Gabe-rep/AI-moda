@@ -1,8 +1,8 @@
 from ImageAnalysis import*
 import re
 
-def prod():
-    tags = image_analysis() 
+def prod(VISION_ENDPOINT,VISION_KEY,path_image):
+    tags = image_analysis(VISION_ENDPOINT,VISION_KEY,path_image)
     #print (tags)
 
     #salvare tutti i tags in un file txt
@@ -14,23 +14,20 @@ def prod():
     fileObject = open(filepath, 'r',encoding = 'utf-8')
     txt_html = fileObject.read()
     #print (txt_html)
+
     # estrazione del vestito con filtro
     try :
-        prod1 = [req for req in re.findall(r"(?<=)wearing a(.*)", txt_html)]
+        prod1 = list(set([req for req in re.findall(r"(?<=)wearing a(.*)", txt_html)]))
         #print (prod1)
-        prod2 = [req for req in re.findall(r"(?<=)up of a(.*)", txt_html)]
+        prod2 = list(set([req for req in re.findall(r"(?<=)up of a(.*)", txt_html)]))
         #print (prod2)
-        prod3 = [req for req in re.findall(r"(?<=)pair of(.*)", txt_html)]
-        #print (prod3)
-        prod4 = [req for req in re.findall(r"(?<=)in a(.*)", txt_html)]
+        prod3 = list(set([req for req in re.findall(r"(?<=)in a(.*)", txt_html)]))
         #print (prod4)
-        prod5 = [req for req in re.findall(r"(?<=)a pair of(.*?)with", txt_html)]
+        prod4 = list(set([req for req in re.findall(r"(?<=)a pair of(.*?)with", txt_html)]))
         #print (prod5)
-        lista_prod = [prod1, prod2, prod3, prod4, prod5]
-        return lista_prod
+        return prod1, prod2, prod3, prod4
     except :
         IndexError
-    
-    
+
 
 

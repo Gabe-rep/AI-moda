@@ -1,21 +1,24 @@
 import os
 import azure.ai.vision as sdk
 
+
+
 """
 This sample does analysis on an image file using all visual features
 and a synchronous (blocking) call. It prints the results to the console,
 including the detailed results.
 """
 
-def image_analysis():
+def image_analysis(VISION_ENDPOINT,VISION_KEY,path_image):
 
-    os.environ["VISION_ENDPOINT"] = "https://testservice000.cognitiveservices.azure.com/"
-    os.environ["VISION_KEY"] = "17c559cb3dcb4d88af6eceedcc98b552"
+
+    os.environ["VISION_ENDPOINT"] = VISION_ENDPOINT
+    os.environ["VISION_KEY"] = VISION_KEY
 
     service_options = sdk.VisionServiceOptions(os.environ["VISION_ENDPOINT"],os.environ["VISION_KEY"])
 
     vision_source = sdk.VisionSource(
-        filename = r"C:\Users\GabinStewellSimoKams\Desktop\AI-moda\HttpTrigger1\mannequin_398527027_1000.jpg"
+        filename = path_image
     )
 
     analysis_options = sdk.ImageAnalysisOptions()
@@ -45,9 +48,9 @@ def image_analysis():
 
     if result.reason == sdk.ImageAnalysisResultReason.ANALYZED:
 
-        print(" Image height: {}".format(result.image_height))
-        print(" Image width: {}".format(result.image_width))
-        print(" Model version: {}".format(result.model_version))
+        # print(" Image height: {}".format(result.image_height))
+        # print(" Image width: {}".format(result.image_width))
+        # print(" Model version: {}".format(result.model_version))
 
 
         if result.caption is not None:
@@ -56,7 +59,7 @@ def image_analysis():
 
         if result.dense_captions is not None:
             lista_content = []
-            print("......................Dense Captions......................")
+            # print("......................Dense Captions......................")
             for caption in result.dense_captions:
                 #print("   '{}', {}, Confidence: {:.4f}".format(caption.content, caption.bounding_box, caption.confidence))
                 lista_content.append (caption.content)
@@ -111,4 +114,6 @@ def image_analysis():
         print("   Error reason: {}".format(error_details.reason))
         print("   Error code: {}".format(error_details.error_code))
         print("   Error message: {}".format(error_details.message))
+
+
     
