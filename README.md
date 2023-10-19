@@ -9,8 +9,11 @@ l'app riceve in input una foto e restitiusce un link con articoli simili alla qu
   * visual studio
 
 ## Step Demo 
+  * Input : file python AI
+    * ci collegiamo ai cognitive service
+    * il path della foto da analizzare
+     
   * Analisi dell'imagine : file python imageAnalisi
-    * ci collegiamo a Vision Visual
     * facciamo l'estrazione dei tags della foto con Dense Caption
 
   * Estrazione del prodotto : file python Product
@@ -20,4 +23,5 @@ l'app riceve in input una foto e restitiusce un link con articoli simili alla qu
   * Restitiure un link Zalando con prodotti similli: file python Response
     * ci colleggiamo a zalando
     * stampiamo prodotti simili
+    
       
